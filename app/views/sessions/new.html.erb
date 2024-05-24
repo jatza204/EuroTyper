@@ -1,0 +1,17 @@
+<div class="login-container">
+  <h1>EuroTyper</h1>
+
+  <%= form_with url: login_path, class: 'login-form' do |form| %>
+    <div class="form-group">
+      <%= form.label :username %>
+      <%= form.text_field :username, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :password %>
+      <%= form.password_field :password, class: 'form-control' %>
+    </div>
+
+    <%= form.submit "Log in", class: 'submit-button' %>
+  <% end %>
+</div>

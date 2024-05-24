@@ -1,0 +1,8 @@
+<%# app/views/dashboard/_admin_form.html.erb %>
+
+<h2>Admin Form</h2>
+
+<%= form_with url: admin_form_path, class: 'admin-form' do |form| %>
+  <!-- Your form fields go here -->
+  <%= form.submit "Submit", class: 'submit-button' %>
+<% end %>

@@ -1,0 +1,32 @@
+<!-- app/views/users/edit.html.erb -->
+
+<h1>Edit User</h1>
+
+<%= form_with(model: @user, local: true) do |form| %>
+  <div>
+    <%= form.label :username %>
+    <%= form.text_field :username %>
+  </div>
+
+  <div>
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div>
+    <%= form.label :wallet_funds %>
+    <%= form.number_field :wallet_funds, step: 0.01 %>
+  </div>
+
+  <div>
+    <%= form.label :league %>
+    <%= form.text_field :league %>
+  </div>
+
+  <div>
+    <%= form.label :user_class %>
+    <%= form.text_field :user_class %>
+  </div>
+
+  <%= form.submit %>
+<% end %>

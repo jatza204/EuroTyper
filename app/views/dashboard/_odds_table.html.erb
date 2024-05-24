@@ -1,0 +1,29 @@
+<!-- app/views/dashboard/_odds_table.html.erb -->
+
+<table>
+  <thead>
+    <tr>
+      <th>Match Date</th>
+      <th>Home Team</th>
+      <th>Away Team</th>
+      <th>Odds 1</th>
+      <th>Odds X</th>
+      <th>Odds 2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @matches.sort_by(&:match_date).each do |match| %>
+     <%= form_with(model: match, url: match_path(match), method: :patch, local: true, data: { turbo: false }) do |form| %>
+        <tr>
+          <td><%= match.match_date %></td>
+          <td><%= match.home_team %></td>
+          <td><%= match.away_team %></td>
+          <td><%= form.number_field :odds_1, step: 0.01, value: match.odds_1 %></td>
+          <td><%= form.number_field :odds_x, step: 0.01, value: match.odds_x %></td>
+          <td><%= form.number_field :odds_2, step: 0.01, value: match.odds_2 %></td>
+          <td><%= form.submit 'Update' %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>

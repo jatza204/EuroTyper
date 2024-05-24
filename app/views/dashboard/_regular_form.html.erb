@@ -1,0 +1,8 @@
+<%# app/views/dashboard/_regular_form.html.erb %>
+
+<h2>Regular User Form</h2>
+
+<%= form_with url: regular_form_path, class: 'regular-form' do |form| %>
+  <!-- Your form fields go here -->
+  <%= form.submit "Submit", class: 'submit-button' %>
+<% end %>

@@ -1,0 +1,12 @@
+<!-- app/views/dashboard/index.html.erb -->
+
+<h1>Welcome to the Dashboard</h1>
+
+<% if current_user.user_class == 'admin' %>
+  <h1>Admin</h1>
+  <%= render 'user_table' %>
+  <%= render 'odds_table' %>
+<% else %>
+  <h1>Regular User</h1>
+  <%= render 'regular_form' %>
+<% end %>
